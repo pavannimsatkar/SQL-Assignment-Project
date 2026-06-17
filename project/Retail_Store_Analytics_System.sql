@@ -535,6 +535,7 @@ FROM
 OFFSET 15
 LIMIT 5;
 
+
 -- Q50. Display the top 3 latest orders.
 
 SELECT 
@@ -545,6 +546,222 @@ FROM
 ORDER BY
     order_date desc
 LIMIT 3;
+
+
+
+-- Part D – Aggregate Functions 
+
+-- Q51. Find the total number of orders. 
+
+SELECT
+    Count(sale_id) AS Total_number_of_orders
+FROM
+    sales;
+
+
+-- Q52. Find the total sales revenue. 
+
+SELECT
+    sum(price) AS total_sales_revenue
+FROM
+    sales;
+
+
+-- Q53. Find the average sales amount. 
+
+SELECT
+    avg(price) AS average_sales_amount
+FROM
+    sales;
+
+
+-- Q54. Find the maximum sales amount. 
+
+SELECT
+    max(price) AS max_sales_amount
+FROM
+    sales;
+
+
+-- Q55. Find the minimum sales amount. 
+
+SELECT
+    min(price) AS min_sales_amount
+FROM
+    sales;
+
+
+-- Q56. Find the highest rating. 
+
+SELECT
+    max(rating) AS highest_rating
+FROM
+    sales;
+
+
+-- Q57. Find the lowest rating. 
+
+SELECT
+    min(rating) AS lowest_rating
+FROM
+    sales;
+
+
+-- Q58. Find the average rating.
+
+SELECT
+    avg(rating) AS average_rating
+FROM
+    sales;
+
+
+-- Q59. Find the total quantity sold. 
+
+SELECT
+    sum(quantity) AS total_quantity_sold
+FROM
+    sales;
+
+
+-- Q60. Find the average quantity sold. 
+
+SELECT
+    avg(quantity) AS average_quantity_sold
+FROM
+    sales;
+
+
+-- Q61. Find the maximum quantity sold. 
+
+SELECT
+    max(quantity) AS max_quantity_sold
+FROM
+    sales;
+
+
+-- Q62. Find the minimum quantity sold. 
+
+SELECT
+    min(quantity) AS min_quantity_sold
+FROM
+    sales;
+
+
+-- Q63. Count the number of Electronics products. 
+
+SELECT
+    count(category) AS all_electronic_products
+FROM
+    sales 
+WHERE
+    category = 'Electronics';
+
+
+-- Q64. Count the number of Fashion products. 
+
+SELECT
+    count(category) AS all_fashion_products
+FROM
+    sales 
+WHERE
+    category = 'Fashion';
+
+-- Q65. Count the number of Sports products. 
+
+SELECT
+    count(category) AS all_Sport_products
+FROM
+    sales 
+WHERE
+    category = 'Sports';
+
+
+
+-- Part E – String Functions 
+
+-- Q66. Convert all customer names to uppercase. 
+
+SELECT
+    upper(customer_name)
+FROM
+    sales;
+
+
+-- Q67. Convert all customer names to lowercase. 
+
+SELECT
+    lower(customer_name)
+FROM
+    sales;
+
+
+-- Q68. Find the length of each customer name. 
+
+SELECT
+    customer_name,
+    length(customer_name)
+FROM
+    sales;
+
+    
+-- Q69. Find the length of each city name. 
+
+SELECT
+    city,
+    length(city)
+FROM
+    sales;
+
+
+-- Q70. Combine customer name and city in one column. 
+
+SELECT
+    CONCAT(customer_name, ' - ', city) AS customer_with_city
+FROM 
+    sales;
+
+
+-- Q71. Replace the letter 'a' with '@' in customer names. 
+
+SELECT 
+    REPLACE(customer_name, 'a', '@') AS modified_name
+FROM 
+    sales;
+
+
+-- Q72. Replace the letter 'e' with '*' in customer names. 
+
+SELECT 
+    REPLACE(customer_name, 'e', '*') AS modified_name
+FROM 
+    sales;
+
+
+-- Q73. Remove extra spaces using TRIM().
+
+SELECT 
+    TRIM(customer_name) AS trimmed_name
+FROM 
+    sales;
+
+
+-- Q74. Display the first 3 letters of each customer name. 
+
+SELECT 
+    LEFT(customer_name, 3) AS first_3_letters
+FROM 
+    sales;
+
+
+-- Q75. Display the last 2 letters of each city name.
+
+SELECT 
+    RIGHT(customer_name, 2) AS last_2_letters
+FROM 
+    sales;
+
+
+
 
 
 
