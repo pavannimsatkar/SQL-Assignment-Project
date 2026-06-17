@@ -762,6 +762,313 @@ FROM
 
 
 
+-- Part F – Numeric and Date Functions 
+
+-- Q76. Round all prices. 
+
+SELECT
+    Round(price)
+FROM
+    sales;
+
+
+-- Q77. Apply CEIL() on prices. 
+
+SELECT
+    CEIL(price)
+FROM
+    sales;
+
+
+-- Q78. Apply FLOOR() on prices.
+
+SELECT
+    FLOOR(price)
+FROM
+    sales;
+
+
+-- Q79. Find MOD(quantity,2). 
+
+SELECT 
+    MOD(quantity,2)
+FROM
+    sales;
+
+
+-- Q80. Find MOD(quantity,3). 
+
+SELECT 
+    MOD(quantity,3)
+FROM
+    sales;
+
+
+-- Q81. Display the current date. 
+
+SELECT 
+    current_date;
+
+-- Q82. Display the current time. 
+
+SELECT 
+    current_time;
+
+-- Q83. Display the current timestamp. 
+
+SELECT 
+    current_timestamp;
+
+-- Q84. Extract the year from order_date.
+
+SELECT
+    EXTRACT(YEAR FROM order_date) AS year
+FROM
+    sales;
+
+
+-- Q85. Extract the month from order_date. 
+
+SELECT
+    EXTRACT(MONTH FROM order_date) AS month
+FROM
+    sales;
+
+
+-- Q86. Extract the day from order_date. 
+
+SELECT
+    EXTRACT(DAY FROM order_date) AS day
+FROM
+    sales;
+
+
+-- Q87. Display orders placed in January. 
+
+SELECT *
+FROM 
+    sales
+WHERE 
+    EXTRACT(MONTH FROM order_date) = 1;
+
+
+-- Q88. Display orders placed before 20 January 2026. 
+
+SELECT *
+FROM 
+    sales
+WHERE
+    order_date < '2026-01-20';
+
+
+-- Q89. Display orders placed after 20 January 2026.
+
+SELECT *
+FROM 
+    sales
+WHERE
+    order_date > '2026-01-20';
+
+
+-- Q90. Display the latest order date. 
+
+SELECT *
+FROM 
+    sales
+ORDER BY
+    order_date desc
+LIMIT 1;
+
+
+-- Part G – UPDATE and DELETE 
+-- Q91. Update the city of Akash. 
+-- Q92. Update the rating of Rahul. 
+-- Q93. Change all Card payments to UPI. 
+-- Q94. Increase all product prices by 500. 
+-- Q95. Decrease all product prices by 100. 
+-- Q96. Change category Electronics to Gadgets. 
+-- Q97. Change city Pune to Nagpur. 
+-- Q98. Update the quantity of a selected product. 
+-- Q99. Update a product name. 
+-- Q100. Update a customer name. 
+-- Q101. Delete a specific customer record. 
+-- Q102. Delete all Sports category records. 
+-- Q103. Delete records with rating below 4.0. 
+-- Q104. Delete all Cash payment records. 
+-- Q105. Delete records from Jaipur. 
+
+
+
+-- Part H – GROUP BY 
+
+-- Q106. Display city-wise order count. 
+
+SELECT
+    city,
+    count(sale_id) AS city_wise_order_count
+FROM
+    sales
+GROUP BY
+    city;
+
+
+-- Q107. Display category-wise order count. 
+
+SELECT
+    category,
+    count(sale_id) AS category_wise_order_count
+FROM
+    sales
+GROUP BY
+    category;
+
+
+-- Q108. Display payment mode-wise order count. 
+
+SELECT
+    payment_mode,
+    count(sale_id) AS payment_mode_wise_order_count
+FROM
+    sales
+GROUP BY
+    payment_mode;
+
+
+-- Q109. Display gender-wise order count. 
+
+SELECT
+    gender,
+    count(sale_id) AS gender_wise_order_count
+FROM
+    sales
+GROUP BY
+    gender;
+
+
+-- Q110. Display city-wise total revenue. 
+
+SELECT
+    city,
+    sum(price * quantity) AS city_wise_total_revenue
+FROM
+    sales
+GROUP BY
+    city;
+
+
+-- Q111. Display category-wise total revenue. 
+
+SELECT
+    category,
+    sum(price * quantity) AS category_wise_total_revenue
+FROM
+    sales
+GROUP BY
+    category;
+
+
+-- Q112. Display payment mode-wise total revenue.
+
+SELECT
+    payment_mode,
+    sum(price * quantity) AS payment_mode_wise_total_revenue
+FROM
+    sales
+GROUP BY
+    payment_mode;
+
+
+-- Q113. Display city-wise average revenue. 
+
+SELECT
+    city,
+    avg(price * quantity) AS city_wise_average_revenue
+FROM
+    sales
+GROUP BY
+    city;
+
+
+-- Q114. Display category-wise average revenue.
+
+SELECT
+    category,
+    avg(price * quantity) AS category_wise_average_revenue
+FROM
+    sales
+GROUP BY
+    category;
+
+
+-- Q115. Display city-wise maximum sale. 
+
+SELECT
+    city,
+    max(price * quantity) AS city_wise_max_sale
+FROM
+    sales 
+GROUP BY
+    city;
+
+
+-- Q116. Display city-wise minimum sale. 
+
+SELECT
+    city,
+    min(price * quantity) AS city_wise_min_sale
+FROM
+    sales 
+GROUP BY
+    city;
+
+
+-- Q117. Display category-wise maximum sale.
+
+SELECT
+    category,
+    max(price * quantity) AS category_wise_max_sale
+FROM
+    sales 
+GROUP BY
+    category;
+
+
+-- Q118. Display category-wise minimum sale. 
+
+SELECT
+    category,
+    min(price * quantity) AS category_wise_min_sale
+FROM
+    sales 
+GROUP BY
+    category;
+
+-- Q119. Display city and category-wise revenue. 
+
+SELECT
+    city,
+    category,
+    sum(price * quantity) AS revenue
+FROM
+    sales
+GROUP BY
+    city,
+    category;
+
+
+--Q120. Display city and payment mode-wise revenue. 
+
+SELECT
+    city,
+    payment_mode,
+    sum(price * quantity) AS revenue
+FROM
+    sales
+GROUP BY
+    city,
+    payment_mode;
+
+
 
 
 
