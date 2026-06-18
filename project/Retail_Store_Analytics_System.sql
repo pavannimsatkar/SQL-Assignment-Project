@@ -891,6 +891,7 @@ LIMIT 1;
 
 
 -- Part G – UPDATE and DELETE 
+
 -- Q91. Update the city of Akash. 
 -- Q92. Update the rating of Rahul. 
 -- Q93. Change all Card payments to UPI. 
@@ -1484,11 +1485,13 @@ generating a total revenue of ₹209,900. The month demonstrates strong sales pe
 primarily driven by high-value electronics purchases.
 The average order value is approximately ₹10,495, indicating
 a healthy revenue contribution per transaction.
+
+(also mentioned in readme file)
 */
 
 
 -- Q150. Generate a complete business performance report using all concepts learned so far.
-/*
+/* 
 The business generated a total revenue of ₹209,900 from 20 completed orders. Pune emerged 
 as the highest revenue-generating city, while Electronics was the top-performing category, 
 contributing the largest share of total revenue. Digital payment methods such as UPI and Card
@@ -1509,5 +1512,7 @@ Average customer rating: 4.44
 
 These queries combine the major concepts practiced:
  GROUP BY, HAVING, WHERE, COUNT, SUM, AVG, ORDER BY, LIMIT, filtering, aggregation, and reporting.
+
+(also mentioned in readme file)
 */
 
