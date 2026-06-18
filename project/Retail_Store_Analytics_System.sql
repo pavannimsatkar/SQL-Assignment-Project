@@ -754,7 +754,8 @@ FROM
 -- Q74. Display the first 3 letters of each customer name. 
 
 SELECT 
-    LEFT(customer_name, 3) AS first_3_letters
+    customer_name,
+    substring(customer_name,1, 3) AS first_3_letters
 FROM 
     sales;
 
@@ -762,7 +763,8 @@ FROM
 -- Q75. Display the last 2 letters of each city name.
 
 SELECT 
-    RIGHT(customer_name, 2) AS last_2_letters
+    customer_name,
+    substring(customer_name,length(customer_name) -1, 3) AS first_3_letters
 FROM 
     sales;
 
@@ -893,20 +895,138 @@ LIMIT 1;
 -- Part G – UPDATE and DELETE 
 
 -- Q91. Update the city of Akash. 
+
+UPDATE 
+    sales
+SET 
+    city = 'nagpur'
+WHERE
+    customer_name = 'Akash';
+
+
 -- Q92. Update the rating of Rahul. 
+
+UPDATE 
+    sales
+SET 
+    rating = '9.9'
+WHERE
+    customer_name = 'Rahul';
+
+
 -- Q93. Change all Card payments to UPI. 
+
+UPDATE
+    sales
+SET
+    payment_mode = 'UPI'
+WHERE
+    payment_mode = 'Card';
+
+
 -- Q94. Increase all product prices by 500. 
+
+UPDATE 
+    sales
+SET
+    price = price + 500;
+
+
 -- Q95. Decrease all product prices by 100. 
+
+UPDATE 
+    sales
+SET
+    price = price - 100;
+
+
 -- Q96. Change category Electronics to Gadgets. 
+
+UPDATE
+    sales
+SET
+    category = 'Gadgets'
+WHERE
+    category = 'Electronics';
+
+
 -- Q97. Change city Pune to Nagpur. 
+
+UPDATE
+    sales
+SET
+    city = 'Nagpur'
+WHERE
+    city = 'Pune';
+    
+
 -- Q98. Update the quantity of a selected product. 
+
+UPDATE
+    sales
+SET
+    quantity = '5'
+WHERE
+    product_name = 'Laptop';
+
+
 -- Q99. Update a product name. 
+
+UPDATE
+    sales
+SET
+    product_name = 'PC'
+WHERE
+    product_name = 'Laptop';
+
+
 -- Q100. Update a customer name. 
+
+UPDATE
+    sales
+SET
+    customer_name = 'Prakash'
+WHERE
+    customer_name = 'Akash';
+
+
 -- Q101. Delete a specific customer record. 
+
+DELETE FROM
+    sales
+WHERE
+    customer_name = 'Riya';
+
+
 -- Q102. Delete all Sports category records. 
--- Q103. Delete records with rating below 4.0. 
+
+DELETE from
+    sales
+WHERE
+    category = 'Sports';
+
+
+-- Q103. Delete records with rating below 4.0.
+
+DELETE FROM
+    sales
+WHERE rating < 4.0;
+
+
 -- Q104. Delete all Cash payment records. 
+
+DELETE FROM
+    sales
+WHERE
+    payment_mode = 'Cash';
+
+
 -- Q105. Delete records from Jaipur. 
+
+DELETE FROM 
+    sales
+WHERE
+    city = 'Jaipur'
 
 
 
