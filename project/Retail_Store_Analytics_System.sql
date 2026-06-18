@@ -1606,7 +1606,6 @@ primarily driven by high-value electronics purchases.
 The average order value is approximately ₹10,495, indicating
 a healthy revenue contribution per transaction.
 
-(also mentioned in readme file)
 */
 
 
@@ -1633,6 +1632,5 @@ Average customer rating: 4.44
 These queries combine the major concepts practiced:
  GROUP BY, HAVING, WHERE, COUNT, SUM, AVG, ORDER BY, LIMIT, filtering, aggregation, and reporting.
 
-(also mentioned in readme file)
 */
 
